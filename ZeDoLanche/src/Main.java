@@ -2,7 +2,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int lanche1 =10;
+        int lanche1 = 10;
         int lanche2 = 4;
         int lanche3 = 2;
 
