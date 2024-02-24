@@ -8,11 +8,7 @@ public class Main {
         int nAlunos = entrada.nextInt();
 
         switch (nAlunos){
-            case 10:
-                System.out.println("A sala utilizada será a I-16");
-                break;
-
-            case 20:
+            case 10,20:
                 System.out.println("A sala utilizada será a I-16");
                 break;
 
