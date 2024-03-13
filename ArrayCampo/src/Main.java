@@ -11,19 +11,21 @@ public class Main {
         int x = rand.nextInt(2);
         int y = rand.nextInt(2);
 
+        matriz[x][y] = 1; // Local onde está a bomba
+
         int p1,p2;
         int explodiu = 0;
         int i;
 
         System.out.println(x + " " + y);
+
         do {
             for(i=0; i<3; i++) {
                 System.out.println("Escolha a posição: ");
                 p1 = entrada.nextInt();
                 p2 = entrada.nextInt();
-                if (p1 == x && p2 == y) {
+                if (matriz[p1][p2] == 1) {
                     System.out.println("Pisou na bomba, volte para o começo");
-                    explodiu = 0;
                     i = -1;
                 }
             }
