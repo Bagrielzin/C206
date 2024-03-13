@@ -34,5 +34,6 @@ public class Main {
 
         System.out.println("Parabéns você venceu!!");
 
+        entrada.close();
     }
 }
