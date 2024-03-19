@@ -1,25 +1,26 @@
 public class Cliente {
 
+    //Variaveis do cliente
     String nome;
     long cpf;
 
+    //Consrtuctor do cliente
     public Cliente(String nome, long cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
 
-    //Computador pc;
-
+    //Array de computadores
     Computador[] pcs = new Computador[10];
 
-    void calculaTotalCompra(){
+    float calculaTotalCompra(){
         float precototal = 0f;
         for (int i = 0; i < pcs.length; i++) {
             if(pcs[i]!= null)
                 precototal += pcs[i].preco;
         }
 
-        System.out.println("Total gasto com os computadores: " + precototal);
+        return precototal;
     }
 
 

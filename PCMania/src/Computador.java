@@ -2,15 +2,19 @@ import javax.sound.midi.Soundbank;
 
 public class Computador {
 
+    //Variaveis do computador
     String marca;
     float preco;
+    //Ponteiros dos objetos
     HardwareBasico hardbasico;
     HardwareBasico hardbasico2;
     HardwareBasico hardbasico3;
     SistemaOperacional sistop;
     MemoriaUSB usbpc;
+    //Auxiliar de verificacao da memoria
     boolean verusb = false;
 
+    //Constructor do computador
     public Computador(String marca, float preco, String nomehard, float capachard, String nomehard2, float capachard2, String nomehard3, float capachard3, String nomesist, int tiposist) {
         this.marca = marca;
         this.preco = preco;
