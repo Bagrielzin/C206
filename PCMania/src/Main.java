@@ -16,7 +16,10 @@ public class Main {
             int verusb = scanner.nextInt();
             switch (op) {
                 case 1:
-                    c1.pcs[i] = new Computador("Positivo", 3300.00F, "Pentium Core i3", 2200F, "Memória RAM", 8F, "HD", 500, "Linux", 32);
+                    c1.pcs[i] = new Computador("Positivo", 3300.00F, "Linux", 32);
+                    c1.pcs[i].hardbasicos[0] = new HardwareBasico("Pentium Core i3",2200F);
+                    c1.pcs[i].hardbasicos[1] = new HardwareBasico("Memoria RAM",8F);
+                    c1.pcs[i].hardbasicos[2] = new HardwareBasico("HD",500);
                     String nomeusb = "Pendrive";
                     int capac = 16;
                     MemoriaUSB usb = new MemoriaUSB(nomeusb, capac);
@@ -26,7 +29,10 @@ public class Main {
                     break;
 
                 case 2:
-                    c1.pcs[i] = new Computador("Acer", 8800.00F, "Pentium Core i5", 3370F, "Memória RAM", 16F, "HD", 1000, "Windows 8", 64);
+                    c1.pcs[i] = new Computador("Acer", 8800.00F, "Windows 8", 64);
+                    c1.pcs[i].hardbasicos[0] = new HardwareBasico("Pentium Core i5",3370F);
+                    c1.pcs[i].hardbasicos[1] = new HardwareBasico("Memoria RAM",16F);
+                    c1.pcs[i].hardbasicos[2] = new HardwareBasico("HD",1000);
                     nomeusb = "Pendrive";
                     capac = 32;
                     usb = new MemoriaUSB(nomeusb, capac);
@@ -36,7 +42,10 @@ public class Main {
                     break;
 
                 case 3:
-                    c1.pcs[i] = new Computador("Positivo", 4800.00F, "Pentium Core i7", 24500F, "Memória RAM", 32F, "HD", 2000, "Windows 10", 64);
+                    c1.pcs[i] = new Computador("Positivo", 4800.00F,"Windows 10", 64);
+                    c1.pcs[i].hardbasicos[0] = new HardwareBasico("Pentium Core i7",4500F);
+                    c1.pcs[i].hardbasicos[1] = new HardwareBasico("Memoria RAM",32);
+                    c1.pcs[i].hardbasicos[2] = new HardwareBasico("HD",2000);
                     nomeusb = "HD externo";
                     capac = 1000;
                     usb = new MemoriaUSB(nomeusb, capac);

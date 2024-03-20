@@ -6,22 +6,23 @@ public class Computador {
     String marca;
     float preco;
     //Ponteiros dos objetos
-    HardwareBasico hardbasico;
-    HardwareBasico hardbasico2;
-    HardwareBasico hardbasico3;
     SistemaOperacional sistop;
+    HardwareBasico[] hardbasicos;
     MemoriaUSB usbpc;
     //Auxiliar de verificacao da memoria
     boolean verusb = false;
 
     //Constructor do computador
-    public Computador(String marca, float preco, String nomehard, float capachard, String nomehard2, float capachard2, String nomehard3, float capachard3, String nomesist, int tiposist) {
+    public Computador(String marca, float preco, String nomesist, int tiposist) {
         this.marca = marca;
         this.preco = preco;
-        this.hardbasico = new HardwareBasico(nomehard,capachard);
-        this.hardbasico2 = new HardwareBasico(nomehard2,capachard2);
-        this.hardbasico3 = new HardwareBasico(nomehard3,capachard3);
+        this.hardbasicos = new HardwareBasico[3];
         this.sistop = new SistemaOperacional(nomesist,tiposist);
+    }
+
+    public Computador(String marca, float preco) {
+        this.marca = marca;
+        this.preco = preco;
     }
 
     void addMemoriaUSB(MemoriaUSB usb){
@@ -32,9 +33,10 @@ public class Computador {
     void mostraPCConfigs(){
         System.out.println("Marca do PC: " + this.marca);
         System.out.println("Preco do PC: R$" + this.preco);
-        System.out.println("Processador: " + this.hardbasico.nome + " " + this.hardbasico.capacidade + " Mhz");
-        System.out.println(this.hardbasico2.nome + " " + this.hardbasico2.capacidade + " Gb");
-        System.out.println("Capacidade do computador: " + this.hardbasico3.nome + " " + this.hardbasico3.capacidade + " Gb");
+        for (int i = 0; i < hardbasicos.length; i++) {
+            if(hardbasicos[i]!=null)
+                System.out.println("Hardware: " + hardbasicos[i].nome + " Capacidade: " + hardbasicos[i].capacidade);
+        }
         System.out.println("Sistema operacional: " + this.sistop.nome + " " + this.sistop.tipo + " bits");
         if(verusb){
             System.out.println("Memória USB: " + usbpc.nome + " " + usbpc.capacidade + " Gb");
