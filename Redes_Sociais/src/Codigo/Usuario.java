@@ -1,6 +1,7 @@
 package Codigo;
 
-import Exceptions.NullException;
+import Exceptions.RedeVaziaException;
+import Exceptions.TipoClasseException;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,14 +10,10 @@ public class Usuario {
 
     private String nome;
     private String email;
-    private RedeSocial[] redeSociais;
     Set <RedeSocial> hashRedes = new HashSet<>();
 
-    public Usuario(RedeSocial[] redeSociais) {
-        this.redeSociais = redeSociais;
-        for (int i = 0; i < redeSociais.length; i++) {
-            hashRedes.add(redeSociais[i]);
-        }
+    public Usuario(Set<RedeSocial> hashRedes) {
+        this.hashRedes = hashRedes;
     }
 
     public void setNome(String nome) {
@@ -33,8 +30,13 @@ public class Usuario {
         for(RedeSocial rede : hashRedes){
             try {
                 if(rede == null){
-                    throw new NullException("Valor nulo adicionado, sem dados");
+                    throw new RedeVaziaException("Valor nulo adicionado, sem dados");
                 }
+
+                if(rede instanceof Instagram){
+                    throw new TipoClasseException("Tentando executar função não disponível nessa rede");
+                }
+
                 if (rede instanceof Facebook) {
                     Facebook fx = (Facebook) rede;
                     fx.postarFoto();
@@ -48,8 +50,10 @@ public class Usuario {
                     tx.curtirPublicacao();
                     tx.compartilhar();
                 }
-            }catch (NullException e){
+            }catch (RedeVaziaException e){
                 System.out.println(e);
+            } catch (TipoClasseException e) {
+                throw new RuntimeException(e);
             }
         }
     }

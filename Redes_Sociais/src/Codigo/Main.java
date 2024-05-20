@@ -1,8 +1,5 @@
 package Codigo;
 
-import Exceptions.NullException;
-import Exceptions.TipoClasseException;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,13 +8,15 @@ public class Main {
 
         Facebook face = new Facebook("1234",200);
         Twitter twitter = new Twitter("1234",500);
-        RedeSocial[] redeSociais = new RedeSocial[5];
+        Instagram ig = new Instagram("1240",200); // teste da checked exception
+        Set <RedeSocial> hashRedes = new HashSet<>();
 
-        redeSociais[0] = face;
-        redeSociais[1] = twitter;
-        redeSociais[2] = null;
+        hashRedes.add(face);
+        hashRedes.add(twitter);
+        hashRedes.add(ig);
+        hashRedes.add(null);
 
-        Usuario user = new Usuario(redeSociais);
+        Usuario user = new Usuario(hashRedes);
         user.setNome("Zézin");
         user.setEmail("zezin1234@gmail.com");
 
