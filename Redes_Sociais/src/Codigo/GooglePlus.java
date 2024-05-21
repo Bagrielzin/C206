@@ -2,10 +2,12 @@ package Codigo;
 
 public class GooglePlus extends RedeSocial implements Compartilhamento,VideoConferencia{
 
+    //Constructor do GooglePlus
     public GooglePlus(String senha, int numAmigos) {
         super(senha, numAmigos);
     }
 
+    //Métodos do GooglePlus
     @Override
     public void postarFoto() {
         System.out.println("Postou uma foto no Google plus");

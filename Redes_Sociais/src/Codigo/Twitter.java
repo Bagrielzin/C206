@@ -2,10 +2,12 @@ package Codigo;
 
 public class Twitter extends RedeSocial implements Compartilhamento{
 
+    //Constructor do twitter
     public Twitter(String senha, int numAmigos) {
         super(senha, numAmigos);
     }
 
+    //Métodos do twitter
     @Override
     public void postarFoto() {
         System.out.println("Postou uma foto no Twitter");

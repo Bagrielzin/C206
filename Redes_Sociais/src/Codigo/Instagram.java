@@ -2,10 +2,12 @@ package Codigo;
 
 public class Instagram extends RedeSocial{
 
+    //Constructor do instagram
     public Instagram(String senha, int numAmigos) {
         super(senha, numAmigos);
     }
 
+    //Métodos do instagram
     @Override
     public void postarFoto() {
         System.out.println("Postou uma foto no Instagram");

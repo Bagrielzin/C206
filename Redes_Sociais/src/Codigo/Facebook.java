@@ -2,10 +2,12 @@ package Codigo;
 
 public class Facebook extends RedeSocial implements VideoConferencia,Compartilhamento{
 
+    //Constructor do facebook
     public Facebook(String senha, int numAmigos) {
         super(senha, numAmigos);
     }
 
+    //Métodos do facebook
     @Override
     public void postarFoto() {
         System.out.println("Postou uma foto no Facebook");

@@ -6,20 +6,23 @@ import java.util.Set;
 public class Main {
     public static void main(String[] args) {
 
+        //Criando 2 instancias de redes
         Facebook face = new Facebook("1234",200);
         Twitter twitter = new Twitter("1234",500);
-        Instagram ig = new Instagram("1240",200); // teste da checked exception
+        //Criando o hashSet para armazenar as redes
         Set <RedeSocial> hashRedes = new HashSet<>();
 
+        //Adicionando as redes no hashSet
         hashRedes.add(face);
         hashRedes.add(twitter);
-        hashRedes.add(ig);
-        hashRedes.add(null);
 
+        //Criando o usuário e inserindo as redes nele
         Usuario user = new Usuario(hashRedes);
+        //Setando as características do usuário
         user.setNome("Zézin");
         user.setEmail("zezin1234@gmail.com");
 
-        user.mostraInfo();
+        //Usuárion utilizando as funções das redes
+        user.utilizandoRedes();
     }
 }
